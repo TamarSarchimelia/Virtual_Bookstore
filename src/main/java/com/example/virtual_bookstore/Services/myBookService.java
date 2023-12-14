@@ -18,11 +18,11 @@ public class myBookService {
     }
 
     public MyBook getById(Long id){
-        return bookRepository.findById(id).orElse(null);
+        return bookRepository.findById(id).get();
     }
 
     public void addBook(MyBook book){
-        //    bookRepository.save(book);
+            bookRepository.save(book);
     }
 
     public void updateBook(Long id, MyBook newBook){

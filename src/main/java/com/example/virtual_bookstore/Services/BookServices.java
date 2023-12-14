@@ -19,7 +19,7 @@ public class BookServices {
     }
 
     public book getById(Long id){
-        return bookRepository.findById(id).orElse(null);
+        return bookRepository.findById(id).get();
     }
 
     public void addBook(Book book){
