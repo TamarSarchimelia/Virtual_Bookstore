@@ -3,6 +3,8 @@ package com.example.virtual_bookstore.Controllers;
 import com.example.virtual_bookstore.Entity.MyBook;
 import com.example.virtual_bookstore.Services.myBookService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.awt.print.Book;
@@ -16,19 +18,19 @@ public class MyBookController {
         return bookServices.getAllBooks();
     }
 
-    public MyBook getById(Long id){
+    public MyBook getById(@PathVariable Long id){
         return bookServices.getById(id);
     }
 
-    public void addBook(MyBook book){
+    public void addBook(@PathVariable MyBook book){
         bookServices.addBook(book);
     }
 
-    public void updateBook(Long id, MyBook newBook){
+    public void updateBook(@PathVariable Long id,@RequestBody MyBook newBook){
         bookServices.updateBook(id, newBook);
     }
 
-    public void delById(Long id){
+    public void delById(@PathVariable Long id){
         bookServices.delById(id);
     }
 }
