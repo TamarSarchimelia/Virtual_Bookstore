@@ -1,4 +1,4 @@
-package com.example.virtual_bookstore;
+package com.example.virtual_bookstore.Entity;
 
 
 import jakarta.persistence.Entity;
@@ -15,4 +15,5 @@ public class book {
     private Long id;
     private String title;
     private String author;
+    private Double price;
 }
