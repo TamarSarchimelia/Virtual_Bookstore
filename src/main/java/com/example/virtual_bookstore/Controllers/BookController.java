@@ -25,11 +25,11 @@ public class BookController {
         return bookServices.getById(id);
     }
 
-    public void addBook(@PathVariable Book book){
+    public void addBook(@PathVariable book book){
         bookServices.addBook(book);
     }
 
-    public void updateBook(@PathVariable Long id,@RequestBody Book newBook){
+    public void updateBook(@PathVariable Long id,@RequestBody book newBook){
         bookServices.updateBook(id, newBook);
     }
 

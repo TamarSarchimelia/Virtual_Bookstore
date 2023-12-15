@@ -14,7 +14,7 @@ import java.util.List;
 public class MyBookController {
     @Autowired
     private myBookService bookServices;
-    public List<MyBook> getAllBooks(){
+    public List<MyBook> getAllMyBooks(){
         return bookServices.getAllBooks();
     }
 

@@ -22,11 +22,11 @@ public class BookServices {
         return bookRepository.findById(id).get();
     }
 
-    public void addBook(Book book){
-        //bookRepository.save(book);
+    public void addBook(book book){
+        bookRepository.save(book);
     }
 
-    public void updateBook(Long id, Book newBook){
+    public void updateBook(Long id, book newBook){
         if (getById(id)!=null) {
             delById(id);
         }
