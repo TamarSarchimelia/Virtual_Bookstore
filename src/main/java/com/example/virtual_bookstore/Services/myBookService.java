@@ -1,6 +1,7 @@
 package com.example.virtual_bookstore.Services;
 
 import com.example.virtual_bookstore.Entity.book;
+import com.example.virtual_bookstore.Repositories.BookRepository;
 import com.example.virtual_bookstore.Repositories.MyBookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,18 +11,18 @@ import java.util.List;
 @Service
 public class myBookService {
     @Autowired
-    private MyBookRepository bookRepository;
+    private MyBookRepository MyBookRepository;
 
-    public List<book> getAllBooks(){
-        return bookRepository.findAll();
+    public List<book> getAllMyBooks(){
+        return MyBookRepository.findAll();
     }
 
     public book getById(Long id){
-        return bookRepository.findById(id).get();
+        return MyBookRepository.findById(id).get();
     }
 
     public void addBook(book book){
-            bookRepository.save(book);
+            MyBookRepository.save(book);
     }
 
     public void updateBook(Long id, book newBook){
@@ -32,6 +33,6 @@ public class myBookService {
     }
 
     public void delById(Long id){
-        bookRepository.deleteById(id);
+        MyBookRepository.deleteById(id);
     }
 }
